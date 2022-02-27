@@ -3,7 +3,8 @@ from datetime import datetime
 
 class CurrentTime:
     def __init__(self, screen):
-        self.font = pygame.font.SysFont('calibri', 200)
+        h = screen.get_height()
+        self.font = pygame.font.SysFont('calibri', int((200*h/1080)))
         self.text = self.font.render(datetime.now().strftime("%H:%M:%S"), False, (255, 255, 255))
         self.rect = self.text.get_rect()
         self.screen = screen
